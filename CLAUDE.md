@@ -80,7 +80,7 @@ npm run og         # regenerate public/og.png (1200×630) from scripts/og.html v
 3. ✅ **SEO & sharing** — per-language metadata, `og.png`, favicons, robots, sitemap.
 4. ✅ **Pages** — `/terms/`, `/privacy/` (placeholders, `noindex` until counsel provides text — flip `PAGES[...].noindex` in `vite.config.ts`), `/risk-disclosure/`, `/press/`, `404.html`.
 5. ✅ **Performance** — Lighthouse mobile (local, simulated throttling) on every language page: Performance 99, Accessibility 100, Best Practices 100, SEO 100; press/risk pages 100.
-6. ⏳ **Deploy** — Cloudflare Pages via GitHub integration (build `npm run build`, output `dist`, Node 24, env vars above). Owner: register the domain, create the repo and Pages project, add the custom domain.
+6. ✅ **Deploy** — live since 2026-10-04 at https://hvxglobal.com (+ www) via Cloudflare Pages project `hvx-website` connected to GitHub `kdoh5501-star/hvx-website` (Cloudflare app limited to this one repo). Every push to `main` deploys automatically; GitHub CI runs build + 44 tests. Domain registered at Cloudflare Registrar, auto-renew on, expires 2027-10-04. Registrant contact is a temporary address; update it once the Philippine office is contracted. Cloudflare Web Analytics is allowed in the CSP.
 7. ⏳ **After deploy** — send the site URL + `assets/hvx-logo-256.png` to the token deployer for the BscScan token profile. Trust Wallet draft in `trustwallet/…/0x252Ce29d2a58B70f98fe80a67773747770Bb0028/`: fill `website` and `links`, check current submission rules/fees.
 
 ## 7. Open questions for the owner
