@@ -1,0 +1,28 @@
+{
+  "name": "hvx-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run check && vite build",
+    "preview": "vite preview",
+    "check": "tsc --noEmit && node scripts/check-i18n.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "og": "node scripts/make-og.mjs",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "node-html-parser": "^9.0.4",
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2"
+  },
+  "dependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@walletconnect/ethereum-provider": "^2.25.0"
+  }
+}

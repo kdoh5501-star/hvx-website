@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HIVE-X (HVX)</title>
+<!--seo-->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#f6f6f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0d11" media="(prefers-color-scheme: dark)">
+<script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<div class="guard" id="guard" role="alert" hidden><b data-i18n="guard.title">This is not the official HIVE-X website.</b> <span data-i18n="guard.text">Do not connect a wallet or send funds here. The official site is</span> <a id="guardLink" href="/"></a></div>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="/assets/hvx-logo-64.webp" width="30" height="30" alt="">HIVE-X</a>
+    <div class="links">
+      <a href="#products" data-i18n="nav.products">Products</a><a href="#wallet-app" data-i18n="nav.wallet">HIVE Wallet</a><a href="#security" data-i18n="nav.security">Security</a><a href="#token" data-i18n="nav.token">HVX Token</a><a href="#transparency" data-i18n="nav.transparency">Transparency</a>
+    </div>
+    <div class="nav-right">
+      <label class="lang-sel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><select id="langSel" aria-label="Language"><option value="en">English</option><option value="tl">Filipino</option><option value="ja">日本語</option><option value="zh">中文</option><option value="ru">Русский</option></select></label>
+      <button class="btn btn-primary btn-sm" type="button" data-connect id="navConnect" data-i18n="cta.connect">Connect Wallet</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kicker" data-i18n="hero.kicker">Cross-border payments · HVX</div>
+      <h1 data-i18n="hero.title">Your money, <span>without borders.</span></h1>
+      <p class="lead" data-i18n="hero.lead">Send value between countries in minutes and spend it with the HIVE-X Card wherever you are. Built on BNB Smart Chain, secured by multisig custody and full on-chain transparency.</p>
+      <div class="cta">
+        <button class="btn btn-red" type="button" data-connect data-i18n="cta.connect">Connect Wallet</button>
+        <a class="btn btn-line" href="#card-details" data-i18n="hero.explore">Explore HIVE-X Card</a>
+      </div>
+      <div class="verify"><span class="dot"></span><span data-i18n="hero.official">Official contract</span><code>0x252C…0028</code><button class="mini" type="button" data-copy="0x252Ce29d2a58B70f98fe80a67773747770Bb0028" data-i18n="common.copy">Copy</button></div>
+      <div class="assure">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.assure.verified">Verified smart contract</span></span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.assure.kyc">KYC-verified cardholders</span></span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="hero.assure.supply">Fixed supply, no minting</span></span>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="halo"></div><div class="ring"></div>
+      <div class="float-chip fc1"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-i18n="hero.chip.approved">Payment approved</b><small data-i18n="hero.chip.pilot">Card pilot · in-store</small></span></div>
+      <div class="float-chip fc2"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></span><span><b data-i18n="hero.chip.multisig">2-of-3 multisig</b><small data-i18n="hero.chip.treasury">Treasury protected</small></span></div>
+      <div class="card3d" id="card" role="img" aria-label="HIVE-X Card">
+        <div class="top"><span class="tier">business</span></div>
+        <div class="chiprow"><div class="chip"></div><svg class="contactless" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 7c2 3 2 7 0 10M12 5c3 4 3 10 0 14M16 3c4 5 4 13 0 18"/></svg></div>
+        <svg class="emblem" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="3.6"/><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"><polygon points="50.0,15.8 59.7,21.4 59.7,32.6 50.0,38.2 40.3,32.6 40.3,21.4"/><polygon points="38.7,35.3 48.4,40.9 48.4,52.1 38.7,57.7 29.0,52.1 29.0,40.9"/><polygon points="61.3,35.3 71.0,40.9 71.0,52.1 61.3,57.7 51.6,52.1 51.6,40.9"/></g><text x="50" y="79" text-anchor="middle" fill="currentColor" font-family="Plus Jakarta Sans Variable, Plus Jakarta Sans, sans-serif" font-size="17" font-weight="800" letter-spacing="1">HVX</text></svg>
+        <div class="bottom"><span class="pan">•••• 2026</span><span class="wordmark">HIVE-X</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="works" aria-label="Compatible wallets">
+  <div class="wrap">
+    <span class="lbl" data-i18n="works.label">Works with</span>
+    <div class="mask"><div class="track">
+      <span>MetaMask</span><span>Trust Wallet</span><span>Coinbase Wallet</span><span>OKX Wallet</span><span>Binance Web3 Wallet</span><span>Rabby</span><span>SafePal</span><span>TokenPocket</span>
+      <span aria-hidden="true">MetaMask</span><span aria-hidden="true">Trust Wallet</span><span aria-hidden="true">Coinbase Wallet</span><span aria-hidden="true">OKX Wallet</span><span aria-hidden="true">Binance Web3 Wallet</span><span aria-hidden="true">Rabby</span><span aria-hidden="true">SafePal</span><span aria-hidden="true">TokenPocket</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="trustbar">
+  <div class="wrap">
+    <div><b>BNB Smart Chain</b><span data-i18n="trust.bsc">BEP-20 token, low fees, fast settlement</span></div>
+    <div><b data-i18n="trust.safe.title">Safe multisig</b><span data-i18n="trust.safe.text">Treasury requires 2 of 3 approvals</span></div>
+    <div><b data-i18n="trust.verified.title">Verified on BscScan</b><span data-i18n="trust.verified.text">Open, auditable contract source</span></div>
+    <div><b>100,000,000,000</b><span data-i18n="trust.supply">Fixed HVX supply</span></div>
+  </div>
+</div>
+
+<main>
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" data-i18n="nav.products">Products</div>
+      <h2 data-i18n="products.title">One ecosystem for sending, holding and spending</h2>
+      <p class="lead" data-i18n="products.lead">HIVE-X connects a payment card, a wallet and the HVX token so value can move from one country to a checkout counter in another.</p>
+    </div>
+    <div class="products">
+      <article class="prod">
+        <span class="status s-live" data-i18n="products.card.status">Live · pilot</span>
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></svg></div>
+        <h3 data-i18n="products.card.title">HIVE-X Card</h3>
+        <p data-i18n="products.card.text">A crypto-funded payment card for everyday spending in stores and online.</p>
+        <ul><li data-i18n="products.card.f1">KYC onboarding in the app</li><li data-i18n="products.card.f2">Top up with USDT today</li><li data-i18n="products.card.f3">Real-world card payments completed</li><li data-i18n="products.card.f4">HVX top-up in development</li></ul>
+      </article>
+      <article class="prod">
+        <span class="status s-prog" data-i18n="status.inDevelopment">In development</span>
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M16 12.5h2M3 10h18"/></svg></div>
+        <h3 data-i18n="nav.wallet">HIVE Wallet</h3>
+        <p data-i18n="products.wallet.text">Our own non-custodial wallet for HVX, USDT and card management in one app.</p>
+        <ul><li data-i18n="products.wallet.f1">Send and receive HVX</li><li data-i18n="products.wallet.f2">Card top-up from the wallet</li><li data-i18n="products.wallet.f3">Transaction history</li></ul>
+      </article>
+      <article class="prod">
+        <span class="status s-live" data-i18n="products.token.status">Live on BSC</span>
+        <div class="icon"><img src="/assets/hvx-logo-64.webp" width="28" height="28" alt=""></div>
+        <h3 data-i18n="nav.token">HVX Token</h3>
+        <p data-i18n="products.token.text">The utility token of the ecosystem, with a fixed supply and public allocation.</p>
+        <ul><li>BEP-20 · 18 decimals</li><li data-i18n="products.token.f2">No mint function, no owner</li><li data-i18n="products.token.f3">24-month vesting for team</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="card-details" style="padding-top:0">
+  <div class="wrap cardsec">
+    <div class="cardsec-visual">
+      <div class="card3d card-flat" role="img" aria-label="HIVE-X Card">
+        <div class="top"><span class="tier">business</span></div>
+        <div class="chiprow"><div class="chip"></div><svg class="contactless" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 7c2 3 2 7 0 10M12 5c3 4 3 10 0 14M16 3c4 5 4 13 0 18"/></svg></div>
+        <svg class="emblem" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="3.6"/><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"><polygon points="50.0,15.8 59.7,21.4 59.7,32.6 50.0,38.2 40.3,32.6 40.3,21.4"/><polygon points="38.7,35.3 48.4,40.9 48.4,52.1 38.7,57.7 29.0,52.1 29.0,40.9"/><polygon points="61.3,35.3 71.0,40.9 71.0,52.1 61.3,57.7 51.6,52.1 51.6,40.9"/></g><text x="50" y="79" text-anchor="middle" fill="currentColor" font-family="Plus Jakarta Sans Variable, Plus Jakarta Sans, sans-serif" font-size="17" font-weight="800" letter-spacing="1">HVX</text></svg>
+        <div class="bottom"><span class="pan">•••• 2026</span><span class="wordmark">HIVE-X</span></div>
+        </div>
+    </div>
+    <div>
+      <div class="kicker" data-i18n="card.kicker">HIVE-X Card</div>
+      <h2 style="margin-top:16px" data-i18n="card.title">A real card, funded from your wallet</h2>
+      <p class="lead" style="margin-top:16px" data-i18n="card.lead">The HIVE-X Card is a physical chip-and-contactless card. Load it with USDT and pay in stores and online.</p>
+      <dl class="specs">
+        <div><dt data-i18n="card.spec.format">Format</dt><dd data-i18n="card.spec.formatValue">Physical card · chip and contactless</dd></div>
+        <div><dt data-i18n="card.spec.funding">Funding</dt><dd data-i18n="card.spec.fundingValue">USDT today · HVX top-up in development</dd></div>
+        <div><dt data-i18n="card.spec.kyc">Verification</dt><dd data-i18n="card.spec.kycValue">Identity verification (KYC) for every cardholder</dd></div>
+        <div><dt data-i18n="card.spec.status">Status</dt><dd data-i18n="card.spec.statusValue">Pilot · real in-store payments completed</dd></div>
+      </dl>
+      <p class="card-note" data-i18n="card.note">Fees, limits and supported countries will be published on this page before general availability.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker" data-i18n="how.kicker">How it works</div><h2 data-i18n="how.title">From wallet to checkout</h2></div>
+    <div class="how">
+      <div><span class="n">01</span><h3 data-i18n="how.step1.title">Connect a wallet</h3><p data-i18n="how.step1.text">Use MetaMask, Trust Wallet or any BNB Smart Chain wallet you already have.</p></div>
+      <div><span class="n">02</span><h3 data-i18n="how.step2.title">Verify and top up</h3><p data-i18n="how.step2.text">Complete KYC once in the HIVE-X app, then load your card from your wallet.</p></div>
+      <div><span class="n">03</span><h3 data-i18n="how.step3.title">Spend locally</h3><p data-i18n="how.step3.text">Pay at shops and online. The merchant receives a standard card payment in local currency.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="wallet-app" style="padding-top:0">
+  <div class="wrap app">
+    <div>
+      <div class="kicker" data-i18n="app.kicker">HIVE Wallet · In development</div>
+      <h2 style="margin-top:16px" data-i18n="app.title">Transfers, card and token in one app</h2>
+      <p class="lead" style="margin-top:16px" data-i18n="app.lead">HIVE Wallet is being built so you can hold HVX and USDT, top up your card and send money abroad from one screen.</p>
+      <div class="feat">
+        <div><span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span><div><h3 data-i18n="app.f1.title">Wallet-to-wallet transfers</h3><p data-i18n="app.f1.text">Send HVX and USDT by address or QR code.</p></div></div>
+        <div><span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></span><div><h3 data-i18n="app.f2.title">Card controls</h3><p data-i18n="app.f2.text">Top up, check balance and review card spending.</p></div></div>
+        <div><span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><div><h3 data-i18n="app.f3.title">Your keys stay yours</h3><p data-i18n="app.f3.text">Non-custodial by design. HIVE-X cannot move your funds.</p></div></div>
+      </div>
+    </div>
+    <div class="phone" role="img" aria-label="HIVE Wallet preview screen">
+      <div class="screen">
+        <div class="notch"></div>
+        <div class="hdr"><span style="display:flex;align-items:center;gap:6px"><img src="/assets/hvx-logo-64.webp" width="18" height="18" alt="">HIVE Wallet</span><span>BSC</span></div>
+        <div class="bal"><small>TOTAL BALANCE</small>$1,250.00</div>
+        <div class="acts2">
+          <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>Send</span>
+          <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 7L7 17M15 17H7V9"/></svg>Receive</span>
+          <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Top up</span>
+        </div>
+        <div class="mini-card"><span>HIVE-X CARD</span><svg class="mini-emblem" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="3.6"/><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"><polygon points="50.0,15.8 59.7,21.4 59.7,32.6 50.0,38.2 40.3,32.6 40.3,21.4"/><polygon points="38.7,35.3 48.4,40.9 48.4,52.1 38.7,57.7 29.0,52.1 29.0,40.9"/><polygon points="61.3,35.3 71.0,40.9 71.0,52.1 61.3,57.7 51.6,52.1 51.6,40.9"/></g><text x="50" y="79" text-anchor="middle" fill="currentColor" font-family="Plus Jakarta Sans Variable, Plus Jakarta Sans, sans-serif" font-size="17" font-weight="800" letter-spacing="1">HVX</text></svg><b>•••• 2026</b></div>
+        <div class="tx">
+          <div><span>USDT → Card</span><span>+200.00</span></div>
+          <div><span>Grocery · Manila</span><span>−42.15</span></div>
+          <div><span>HVX received</span><span>+5,000</span></div>
+        </div>
+        <div class="preview-tag">SAMPLE SCREEN · IN DEVELOPMENT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="security">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker" data-i18n="nav.security">Security</div><h2 data-i18n="security.title">Built to be checked, not just trusted</h2><p class="lead" data-i18n="security.lead">Every safeguard below can be verified on-chain by anyone.</p></div>
+    <div class="sec-grid">
+      <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg><h3 data-i18n="security.multisig.title">Multisig treasury</h3><p data-i18n="security.multisig.text">The token treasury sits in a Safe wallet. Moving funds needs two of three independent signers.</p></div>
+      <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg><h3 data-i18n="security.vesting.title">Locked vesting</h3><p data-i18n="security.vesting.text">Foundation and team tokens are held by a vesting contract and release gradually over 24 months.</p></div>
+      <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3 data-i18n="security.supply.title">Fixed supply</h3><p data-i18n="security.supply.text">The HVX contract has no mint function and no owner key. 100 billion is the final supply.</p></div>
+      <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><h3 data-i18n="security.kyc.title">KYC for cardholders</h3><p data-i18n="security.kyc.text">Every cardholder completes identity verification before the card is issued.</p></div>
+      <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg><h3 data-i18n="security.custody.title">Non-custodial access</h3><p data-i18n="security.custody.text">You connect your own wallet. HIVE-X never asks for your seed phrase or private key.</p></div>
+      <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg><h3 data-i18n="security.source.title">Verified source code</h3><p data-i18n="security.source.text">Token and vesting contracts are published and verified on BscScan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="token">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker" data-i18n="nav.token">HVX Token</div><h2 data-i18n="token.title">100 billion HVX, allocated once</h2><p class="lead" data-i18n="token.lead">The full supply was created at deployment and distributed into six purpose-bound allocations.</p></div>
+    <div class="tok">
+      <svg class="donut" viewBox="0 0 240 240" role="img" aria-label="HVX allocation chart">
+        <g id="donut" transform="translate(120 120) rotate(-90)" fill="none" stroke-width="30"></g>
+        <text x="120" y="112" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.5">TOTAL SUPPLY</text>
+        <text x="120" y="138" text-anchor="middle" fill="var(--ink)" font-family="Plus Jakarta Sans Variable, Plus Jakarta Sans, sans-serif" font-size="26" font-weight="800">100B</text>
+      </svg>
+      <div class="tbl"><table><thead><tr><th data-i18n="token.th.allocation">Allocation</th><th data-i18n="token.th.share">Share</th><th data-i18n="token.th.release">Release</th></tr></thead><tbody id="alloc"></tbody></table></div>
+    </div>
+    <div class="live-head" style="margin-top:56px"><h3 data-i18n="live.title">On-chain right now</h3><span class="pulse" id="pulse"><i></i><span id="pulseTxt" data-i18n="live.status">Live on the official site</span></span></div>
+    <div class="live">
+      <div><span class="k" data-i18n="live.supply">Total supply</span><span class="v" id="lv-supply">100,000,000,000 <small>HVX</small></span></div>
+      <div><span class="k" data-i18n="live.vault">Locked in vesting vault</span><span class="v" id="lv-vault">—</span></div>
+      <div><span class="k" data-i18n="live.safe">Treasury (Safe)</span><span class="v" id="lv-safe">—</span></div>
+      <div><span class="k" data-i18n="live.block">Latest BSC block</span><span class="v" id="lv-block">—</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="transparency" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker" data-i18n="nav.transparency">Transparency</div><h2 data-i18n="addresses.title">Official addresses</h2><p class="lead" data-i18n="addresses.lead">Only trust these addresses. Check them on BscScan before you add or transfer HVX.</p></div>
+    <div class="addrs" id="addrs"></div>
+    <div class="channels">
+      <div><h3 data-i18n="channels.title">Official channels</h3><p data-i18n="channels.lead">Only these channels speak for HIVE-X. Anyone else claiming to be HIVE-X is not official.</p></div>
+      <ul class="chlist" id="chlist"></ul>
+      <p class="chnote" data-i18n="channels.note">HIVE-X never sends the first direct message and never asks for your seed phrase, private key or a test transfer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="wallet" style="padding-top:0">
+  <div class="wrap">
+    <div class="wallet">
+      <div class="wpanel">
+        <div class="kicker" data-i18n="wallet.kicker">Wallet</div>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.3rem)" data-i18n="wallet.title">Connect the wallet you already use</h2>
+        <p class="lead" style="font-size:1rem" data-i18n="wallet.lead">HIVE-X works with any wallet that supports BNB Smart Chain. Connecting switches your wallet to BSC and adds HVX to your token list.</p>
+        <div class="wlogos"><span>MetaMask</span><span>Trust Wallet</span><span>Coinbase Wallet</span><span>OKX Wallet</span><span>Binance Web3 Wallet</span><span>Rabby</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn btn-red" type="button" data-connect data-i18n="cta.connect">Connect Wallet</button><span class="status s-prog" style="align-self:center" data-i18n="wallet.hiveSoon">HIVE Wallet in development</span></div>
+      </div>
+      <div class="wpanel">
+        <h3 data-i18n="manual.title">Add HVX manually</h3>
+        <dl class="kv"><dt data-i18n="manual.network">Network</dt><dd>BNB Smart Chain</dd><dt data-i18n="manual.contract">Contract</dt><dd id="kvc"></dd><dt data-i18n="manual.name">Name</dt><dd>HiveX</dd><dt data-i18n="manual.symbol">Symbol</dt><dd>HVX</dd><dt data-i18n="manual.decimals">Decimals</dt><dd>18</dd></dl>
+        <button class="btn btn-line btn-sm" type="button" data-copy="0x252Ce29d2a58B70f98fe80a67773747770Bb0028" style="justify-self:start" data-i18n="manual.copy">Copy contract address</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker" data-i18n="roadmap.kicker">Roadmap</div><h2 data-i18n="roadmap.title">Where we are</h2><p class="lead" data-i18n="roadmap.lead">Each milestone shows its current status. Planned items have no fixed date.</p></div>
+    <div class="road">
+      <div class="phase"><span class="status s-live" data-i18n="status.completed">Completed</span><h3 data-i18n="roadmap.p1.title">Token launch</h3><ul><li data-i18n="roadmap.p1.i1">HVX deployed and verified</li><li data-i18n="roadmap.p1.i2">Safe 2-of-3 treasury</li><li data-i18n="roadmap.p1.i3">24-month vesting contract</li></ul></div>
+      <div class="phase"><span class="status s-live" data-i18n="status.completed">Completed</span><h3 data-i18n="roadmap.p2.title">Card pilot</h3><ul><li data-i18n="roadmap.p2.i1">KYC onboarding</li><li data-i18n="roadmap.p2.i2">USDT top-up</li><li data-i18n="roadmap.p2.i3">Retail payments tested</li></ul></div>
+      <div class="phase"><span class="status s-prog" data-i18n="status.inProgress">In progress</span><h3 data-i18n="roadmap.p3.title">Ecosystem</h3><ul><li data-i18n="roadmap.p3.i1">HIVE Wallet app</li><li data-i18n="roadmap.p3.i2">HVX card top-up</li><li data-i18n="roadmap.p3.i3">Card network partnership</li></ul></div>
+      <div class="phase"><span class="status s-plan" data-i18n="status.planned">Planned</span><h3 data-i18n="roadmap.p4.title">Expansion</h3><ul><li data-i18n="roadmap.p4.i1">Merchant network in Southeast Asia</li><li data-i18n="roadmap.p4.i2">Regional entity setup</li><li data-i18n="roadmap.p4.i3">Exchange listing (not confirmed)</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">FAQ</div><h2 data-i18n="faq.title">Questions</h2></div>
+    <div class="faq">
+      <details><summary data-i18n="faq.q1">Which wallets can I connect?</summary><p data-i18n="faq.a1">Any wallet that supports BNB Smart Chain, including MetaMask, Trust Wallet, Coinbase Wallet, OKX Wallet and Binance Web3 Wallet. On mobile, open this site inside your wallet's browser. Our own HIVE Wallet is in development.</p></details>
+      <details><summary data-i18n="faq.q2">Can I pay with HVX on the card today?</summary><p data-i18n="faq.a2">Not yet. The card is currently funded with USDT. HVX top-up is in development and will be announced on official channels.</p></details>
+      <details><summary data-i18n="faq.q3">Can more HVX ever be created?</summary><p data-i18n="faq.a3">No. The contract has no mint function and no owner. The supply is permanently 100,000,000,000 HVX.</p></details>
+      <details><summary data-i18n="faq.q4">Is HVX listed on an exchange?</summary><p data-i18n="faq.a4">Not at this time. Any listing will be announced only through official HIVE-X channels. Be careful of anyone offering HVX at a "pre-listing" price.</p></details>
+      <details><summary data-i18n="faq.q5">How do I avoid fake tokens and scams?</summary><p data-i18n="faq.a5">Only use the contract address on this page (0x252C…0028). HIVE-X will never ask for your seed phrase, private key or a transfer to "verify" your wallet.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div><a class="brand" href="#top" style="padding:0;margin-bottom:12px"><img src="/assets/hvx-logo-64.webp" width="28" height="28" alt="">HIVE-X</a><p data-i18n="footer.tagline">The HVX ecosystem for cross-border transfers and everyday payments.</p></div>
+      <div><h2 data-i18n="nav.products">Products</h2><a href="#products" data-i18n="products.card.title">HIVE-X Card</a><a href="#wallet-app" data-i18n="nav.wallet">HIVE Wallet</a><a href="#token" data-i18n="nav.token">HVX Token</a></div>
+      <div><h2 data-i18n="footer.developers">Developers</h2><a href="https://bscscan.com/token/0x252Ce29d2a58B70f98fe80a67773747770Bb0028" target="_blank" rel="noopener">Token on BscScan ↗</a><a href="https://bscscan.com/address/0x04d4D102eed59b34A1A6527b48cCa690daEeC8a3#code" target="_blank" rel="noopener">Vesting contract ↗</a><a href="https://app.safe.global/home?safe=bnb:0xc5748294eE8884E7ac0bf27E0978cBA4c81b6d75" target="_blank" rel="noopener">Treasury on Safe ↗</a></div>
+      <div><h2 data-i18n="footer.resources">Resources</h2><a href="#security" data-i18n="nav.security">Security</a><a href="#transparency" data-i18n="addresses.title">Official addresses</a><a href="/risk-disclosure/" data-i18n="footer.riskLink">Risk disclosure</a><a href="/terms/" data-i18n="footer.terms">Terms of use</a><a href="/privacy/" data-i18n="footer.privacy">Privacy policy</a><a href="/press/" data-i18n="footer.press">Press kit</a></div>
+    </div>
+    <p class="risk" id="risk" data-i18n="footer.risk"><b>Risk disclosure.</b> Digital assets are highly volatile and you may lose some or all of the money you use. Nothing on this website is investment advice, an offer of securities, or a promise of returns, exchange listing or price. Card services are provided through third-party partners and depend on partner approval, regulation and legal review; features and availability may change.<br><br>© 2026 HIVE-X. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <header><h3 id="mtitle" data-i18n="how.step1.title">Connect a wallet</h3><button class="x" type="button" id="mclose" aria-label="Close">×</button></header>
+    <div id="detected-wrap" hidden><div class="sub" data-i18n="modal.detected">Detected in this browser</div><div class="wlist" id="detected" style="margin-top:10px"></div></div>
+    <div id="wc-wrap" hidden><div class="sub">WalletConnect</div><div class="wlist" style="margin-top:10px"><button class="wopt" type="button" id="m-wc"><span class="mono">WC</span><span>WalletConnect<small data-i18n="modal.wc">Scan a QR code with any mobile wallet</small></span></button></div></div>
+    <div><div class="sub" data-i18n="modal.mobile">Open on mobile</div><div class="wlist" style="margin-top:10px">
+      <a class="wopt" id="m-mm" target="_blank" rel="noopener"><span class="mono">MM</span><span>MetaMask<small data-i18n="modal.metamask">Open this site in the MetaMask app</small></span></a>
+      <a class="wopt" id="m-tw" target="_blank" rel="noopener"><span class="mono">TW</span><span>Trust Wallet<small data-i18n="modal.trust">Open this site in the Trust Wallet app</small></span></a>
+      <a class="wopt" id="m-add" target="_blank" rel="noopener"><span class="mono">+</span><span><span data-i18n="modal.addHvx">Add HVX to Trust Wallet</span><small data-i18n="modal.addHvxNote">Adds the token directly in the app</small></span></a>
+      <div class="wopt" style="cursor:default;opacity:.75"><img src="/assets/hvx-logo-64.webp" alt=""><span><span data-i18n="nav.wallet">HIVE Wallet</span><small data-i18n="modal.hiveNote">Our own wallet app</small></span><span class="status s-prog badge" data-i18n="status.soon">Soon</span></div>
+    </div></div>
+    <p class="small" style="font-size:.8rem;color:var(--muted)" data-i18n="modal.noSeed">HIVE-X will never ask for your seed phrase or private key.</p>
+    <p id="wmsg" role="status" aria-live="polite"></p>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+</body>
+</html>

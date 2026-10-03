@@ -1,0 +1,22 @@
+{
+  "name": "HiveX",
+  "type": "BEP20",
+  "symbol": "HVX",
+  "decimals": 18,
+  "website": "https://TODO-final-domain/",
+  "description": "HVX is the BEP-20 utility token of HIVE-X, a cross-border payment ecosystem that connects a crypto-funded payment card, a wallet and the token on BNB Smart Chain. Fixed supply of 100,000,000,000 HVX with no mint function and no owner.",
+  "explorer": "https://bscscan.com/token/0x252Ce29d2a58B70f98fe80a67773747770Bb0028",
+  "status": "active",
+  "id": "0x252Ce29d2a58B70f98fe80a67773747770Bb0028",
+  "links": [
+    {
+      "name": "x",
+      "url": "https://x.com/TODO"
+    },
+    {
+      "name": "telegram",
+      "url": "https://t.me/TODO"
+    }
+  ],
+  "tags": []
+}
