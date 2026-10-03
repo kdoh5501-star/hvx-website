@@ -119,6 +119,8 @@
   "modal.mobile": "在手机上打开",
   "modal.noSeed": "HIVE-X 绝不会索要你的助记词或私钥。",
   "modal.trust": "在 Trust Wallet 应用中打开本站",
+  "modal.twListing": "Trust Wallet 官方 HVX 图标",
+  "modal.twListingNote": "代币列表登记准备中",
   "modal.wc": "使用任意手机钱包扫描二维码",
   "nav.products": "产品",
   "nav.security": "安全",

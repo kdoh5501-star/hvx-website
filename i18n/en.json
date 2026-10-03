@@ -119,6 +119,8 @@
   "modal.mobile": "Open on mobile",
   "modal.noSeed": "HIVE-X will never ask for your seed phrase or private key.",
   "modal.trust": "Open this site in the Trust Wallet app",
+  "modal.twListing": "Official HVX logo in Trust Wallet",
+  "modal.twListingNote": "Token list registration in preparation",
   "modal.wc": "Scan a QR code with any mobile wallet",
   "nav.products": "Products",
   "nav.security": "Security",

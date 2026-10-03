@@ -119,6 +119,8 @@
   "modal.mobile": "モバイルで開く",
   "modal.noSeed": "HIVE-Xがシードフレーズや秘密鍵を求めることは決してありません。",
   "modal.trust": "Trust Walletアプリでこのサイトを開く",
+  "modal.twListing": "Trust Walletの公式HVXロゴ",
+  "modal.twListingNote": "トークンリストへの登録を準備中",
   "modal.wc": "モバイルウォレットでQRコードをスキャン",
   "nav.products": "プロダクト",
   "nav.security": "セキュリティ",

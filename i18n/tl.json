@@ -119,6 +119,8 @@
   "modal.mobile": "Buksan sa mobile",
   "modal.noSeed": "Hindi kailanman hihingin ng HIVE-X ang seed phrase o private key mo.",
   "modal.trust": "Buksan ang site na ito sa Trust Wallet app",
+  "modal.twListing": "Opisyal na HVX logo sa Trust Wallet",
+  "modal.twListingNote": "Inihahanda ang pagpaparehistro sa token list",
   "modal.wc": "I-scan ang QR code gamit ang anumang mobile wallet",
   "nav.products": "Mga Produkto",
   "nav.security": "Seguridad",
