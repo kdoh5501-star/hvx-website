@@ -17,6 +17,7 @@ The approved design and content baseline is the original single-file prototype, 
 | Total supply | 100,000,000,000 (fixed; no mint function, no owner) |
 | Token contract | `0x252Ce29d2a58B70f98fe80a67773747770Bb0028` |
 | Vesting vault | `0x04d4D102eed59b34A1A6527b48cCa690daEeC8a3` |
+| Official website | **https://hvxglobal.com** (decided 2026-10-03; default in `vite.config.ts`) |
 | Treasury (Safe 2-of-3) | `0xc5748294eE8884E7ac0bf27E0978cBA4c81b6d75` |
 
 Brand name on the site is **HIVE-X**; the on-chain token name is **HiveX**. Use "HiveX (HVX)" in any exchange / listing / registry form.
@@ -64,7 +65,7 @@ npm run og         # regenerate public/og.png (1200×630) from scripts/og.html v
 ```
 - `index.html` — home page template (English text inline). `src/main.ts` entry; `src/i18n.ts` (language switch), `src/wallet.ts` (Connect Wallet modal), `src/live.ts` (on-chain panel), `src/guard.ts` (anti-phishing banner), `src/content.ts` (allocation/address markup shared by build and runtime), `src/config.ts` (verified addresses, languages).
 - `vite.config.ts` plugin `hvx-site` prerenders the home page into `/`, `/tl/`, `/ja/`, `/zh/`, `/ru/` (translated text, tables, official channels, `<title>`, description, canonical, hreflang, OG/Twitter), inlines CSS, and writes `robots.txt`, `sitemap.xml` and `/.well-known/security.txt`. The picker switches language in place and updates the URL.
-- Env (`.env.example`, set in Cloudflare Pages → Settings → Variables): `SITE_URL` (**required** — canonical/OG/sitemap/phishing guard), `OFFICIAL_EMAIL`, `OFFICIAL_X`, `OFFICIAL_TELEGRAM`, `SECURITY_CONTACT` (all optional; empty = hidden), `VITE_WC_PROJECT_ID` (optional; empty = WalletConnect code left out of the bundle).
+- Env (`.env.example`, set in Cloudflare Pages → Settings → Variables): `SITE_URL` (defaults to `https://hvxglobal.com`; override only for staging — drives canonical/OG/sitemap/phishing guard), `OFFICIAL_EMAIL`, `OFFICIAL_X`, `OFFICIAL_TELEGRAM`, `SECURITY_CONTACT` (all optional; empty = hidden), `VITE_WC_PROJECT_ID` (optional; empty = WalletConnect code left out of the bundle).
 - Fonts: Plus Jakarta Sans (variable) + IBM Plex Mono self-hosted via Fontsource. Japanese and Chinese use platform fonts (Hiragino/PingFang, Noto Sans CJK on Android, Yu Gothic/YaHei on Windows) — a CJK web font cost ~250 ms main-thread time on slow phones.
 - Anti-phishing: on any host other than `SITE_URL`'s host, `localhost`, or this project's `*.pages.dev` (from `CF_PAGES_URL` at build), a red banner says the copy is not official and links to the real domain.
 - Security headers (CSP, frame-ancestors none, nosniff, HSTS, Permissions-Policy) live in `public/_headers` (Cloudflare) and `vercel.json`; keep them in sync. The CSP already allows the WalletConnect/Reown hosts.
@@ -84,7 +85,7 @@ npm run og         # regenerate public/og.png (1200×630) from scripts/og.html v
 
 ## 7. Open questions for the owner
 - Treasury Safe currently holds 0 HVX on-chain while the vault holds ~60B. Decide whether to keep showing the "Treasury (Safe)" live figure.
-- Final domain name, official email, and social links (X/Telegram) for footer and token profiles.
+- Official email and social links (X/Telegram) for the channels block, press kit and token profiles. (Domain decided: hvxglobal.com.)
 - Native-speaker review of Filipino, Japanese, Chinese and Russian copy before launch.
 
 ## 8. Files in this package

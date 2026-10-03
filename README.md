@@ -1,6 +1,6 @@
 # HIVE-X website
 
-Source of the official HIVE-X (HVX) website. Static site built with Vite and TypeScript, deployed
+Source of the official HIVE-X (HVX) website, **https://hvxglobal.com**. Static site built with Vite and TypeScript, deployed
 on Cloudflare Pages.
 
 > **Official token contract (BNB Smart Chain):** `0x252Ce29d2a58B70f98fe80a67773747770Bb0028`

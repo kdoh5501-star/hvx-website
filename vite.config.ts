@@ -7,7 +7,8 @@ import { LANGS, HTML_LANG, OG_LOCALE, TOKEN, langPath, type Lang } from './src/c
 import { allocRows, addrRows, donutCircles, pageTitle, pageDescription, stripTags, type Dict } from './src/content';
 
 const root = dirname(fileURLToPath(import.meta.url));
-const PLACEHOLDER_SITE = 'https://hivex.example';
+/** Official domain. SITE_URL can override it, e.g. for a staging build. */
+const DEFAULT_SITE = 'https://hvxglobal.com';
 const LANG_NAMES: Record<Lang, string> = { en: 'English', tl: 'Filipino', ja: '日本語', zh: '中文', ru: 'Русский' };
 
 const dicts = Object.fromEntries(
@@ -146,7 +147,7 @@ function productionHeaders(): Record<string, string> {
 }
 
 function hvxSite(): Plugin {
-  let site = PLACEHOLDER_SITE;
+  let site = DEFAULT_SITE;
   let official = readOfficial({});
   let outDir = 'dist';
   return {
@@ -155,11 +156,8 @@ function hvxSite(): Plugin {
     configResolved(c) {
       outDir = resolve(c.root, c.build.outDir);
       const env = loadEnv(c.mode, c.root, '');
-      site = (env.SITE_URL || PLACEHOLDER_SITE).replace(/\/+$/, '');
+      site = (env.SITE_URL || DEFAULT_SITE).replace(/\/+$/, '');
       official = readOfficial(env);
-      if (c.command === 'build' && site === PLACEHOLDER_SITE) {
-        c.logger.warn(`\n[hvx-site] SITE_URL is not set — canonical, hreflang, OG and sitemap use ${PLACEHOLDER_SITE}. Set SITE_URL in .env before deploying.\n`);
-      }
     },
     transformIndexHtml: {
       order: 'post',
@@ -210,13 +208,13 @@ function hvxSite(): Plugin {
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, root, '');
-  const officialHost = new URL(env.SITE_URL || PLACEHOLDER_SITE).host;
+  const officialHost = new URL(env.SITE_URL || DEFAULT_SITE).host;
   // Cloudflare Pages sets CF_PAGES_URL (https://<hash>.<project>.pages.dev) during its builds.
   const pagesHost = env.CF_PAGES_URL ? new URL(env.CF_PAGES_URL).host.split('.').slice(-3).join('.') : '';
   return {
     plugins: [hvxSite()],
     define: {
-      __OFFICIAL_HOST__: JSON.stringify(officialHost === new URL(PLACEHOLDER_SITE).host ? '' : officialHost),
+      __OFFICIAL_HOST__: JSON.stringify(officialHost),
       __PAGES_HOST__: JSON.stringify(pagesHost),
     },
     preview: { headers: productionHeaders() },

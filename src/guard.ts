@@ -6,7 +6,6 @@ declare const __PAGES_HOST__: string;
 
 export function initGuard() {
   const official = __OFFICIAL_HOST__;
-  if (!official) return; // SITE_URL not configured (local builds)
   const host = location.hostname;
   const allowed =
     host === official.replace(/:\d+$/, '') ||

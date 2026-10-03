@@ -30,8 +30,6 @@ jobs:
       - run: npm ci
       - name: Typecheck, i18n/Korean check and build
         run: npm run build
-        env:
-          SITE_URL: https://hivex.example
       - run: npx playwright install --with-deps chromium
       - name: End-to-end tests
         run: npm test
