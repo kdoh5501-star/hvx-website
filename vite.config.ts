@@ -15,13 +15,15 @@ const dicts = Object.fromEntries(
   LANGS.map((l) => [l, JSON.parse(readFileSync(resolve(root, `i18n/${l}.json`), 'utf8')) as Dict]),
 ) as Record<Lang, Dict>;
 
-/** Official channels and contacts, set per deployment (see .env.example). Empty values are omitted. */
+/** Official channels and contacts. Env vars (see .env.example) override; empty values are omitted. */
 interface Official { email: string; x: string; telegram: string; security: string }
+/** Cloudflare Email Routing forwards this address to the owner's mailbox. */
+const DEFAULT_EMAIL = 'contact@hvxglobal.com';
 const readOfficial = (env: Record<string, string>): Official => ({
-  email: env.OFFICIAL_EMAIL ?? '',
+  email: env.OFFICIAL_EMAIL ?? DEFAULT_EMAIL,
   x: env.OFFICIAL_X ?? '',
   telegram: env.OFFICIAL_TELEGRAM ?? '',
-  security: env.SECURITY_CONTACT || env.OFFICIAL_EMAIL || '',
+  security: env.SECURITY_CONTACT || (env.OFFICIAL_EMAIL ?? DEFAULT_EMAIL),
 });
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
