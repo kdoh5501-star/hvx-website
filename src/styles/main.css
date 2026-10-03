@@ -376,3 +376,6 @@ html[lang="ru"] h1{font-size:clamp(2.2rem,5vw,4rem)}
 .release-body p{color:var(--ink-2);max-width:70ch;margin-top:14px}
 .release-body h2{margin-top:36px}
 .release-dateline{font-weight:700;color:var(--ink)}
+/* very small phones: long words (e.g. Russian) must never push headings off-screen */
+h1,h2,h3,.lead,.kicker{overflow-wrap:break-word;hyphens:auto}
+@media (max-width:360px){h2{font-size:1.65rem}}
