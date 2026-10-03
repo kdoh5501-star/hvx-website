@@ -7,3 +7,6 @@ dist/
 Thumbs.db
 test-results/
 playwright-report/
+
+# Unpublished drafts (press releases before embargo, legal drafts). Never commit.
+drafts/

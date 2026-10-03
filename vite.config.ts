@@ -112,7 +112,7 @@ function localizeHome(html: string, lang: Lang, site: string, official: Official
 /** Risk disclosure page: the footer disclosure in every supported language. */
 function riskSections(): string {
   return LANGS.map((l) =>
-    `<section class="doc-lang" lang="${HTML_LANG[l]}"><h2>${LANG_NAMES[l]}</h2><p>${dicts[l]['footer.risk'].replace(/<br><br>©.*$/, '')}</p></section>`,
+    `<section class="doc-lang" lang="${HTML_LANG[l]}"><h2>${LANG_NAMES[l]}</h2><p>${dicts[l]['footer.risk'].replace(/<br\s*\/?><br\s*\/?>©.*$/, '')}</p></section>`,
   ).join('\n');
 }
 

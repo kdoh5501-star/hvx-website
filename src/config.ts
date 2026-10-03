@@ -12,3 +12,10 @@ export type Lang = (typeof LANGS)[number];
 export const HTML_LANG: Record<Lang, string> = { en: 'en', tl: 'fil', ja: 'ja', zh: 'zh-Hans', ru: 'ru' };
 export const OG_LOCALE: Record<Lang, string> = { en: 'en_US', tl: 'fil_PH', ja: 'ja_JP', zh: 'zh_CN', ru: 'ru_RU' };
 export const langPath = (l: Lang) => (l === 'en' ? '/' : `/${l}/`);
+
+/**
+ * Live "Treasury (Safe)" balance in the on-chain panel. Off while the Safe holds 0 HVX
+ * (the treasury allocation has not been moved there yet). To turn it back on, set this to
+ * true and restore the commented-out #lv-safe cell in index.html (the panel then has 4 cells).
+ */
+export const SHOW_TREASURY_BALANCE = false;

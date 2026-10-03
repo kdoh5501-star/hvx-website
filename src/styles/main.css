@@ -241,7 +241,7 @@ html[lang="ru"] h1{font-size:clamp(2.2rem,5vw,4rem)}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* live chain panel */
-.live{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-top:28px}
+.live{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-top:28px}
 .live > div{background:var(--surface);padding:24px 26px;display:grid;gap:6px;min-width:0}
 .live .k{font-size:.8rem;color:var(--muted);font-weight:600}
 .live .v{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
@@ -251,7 +251,7 @@ html[lang="ru"] h1{font-size:clamp(2.2rem,5vw,4rem)}
 .pulse i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
 .pulse.on{color:var(--live)} .pulse.on i{background:var(--live);animation:pl 1.8s infinite}
 @keyframes pl{50%{opacity:.35}}
-@media (max-width:900px){.live{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.live{grid-template-columns:1fr 1fr}.live > div:first-child:nth-last-child(odd){grid-column:1/-1}}
 
 /* wallet app preview */
 .app{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -358,3 +358,21 @@ html[lang="ru"] h1{font-size:clamp(2.2rem,5vw,4rem)}
 .press-asset:hover{border-color:var(--ink-2)}
 .doc-lang a{color:var(--ink)}
 @media (max-width:560px){.works .wrap{gap:16px}.works .lbl{white-space:normal;max-width:8.5rem;line-height:1.25}}
+
+/* legal drafts: placeholders for counsel and lists */
+.todo{background:var(--prog-wash);color:var(--prog);border-radius:4px;padding:0 4px;font-weight:600}
+.doc-meta{color:var(--muted);font-size:.88rem;margin-bottom:8px}
+.doc-lang ul{margin:10px 0 0;padding-left:20px;color:var(--ink-2);display:grid;gap:8px;max-width:70ch}
+.doc-lang p + p{margin-top:10px}
+.doc-lang code{font-family:var(--mono);font-size:.84rem;overflow-wrap:anywhere}
+
+/* press releases */
+.press-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.press-list li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.press-list time{color:var(--muted);font-size:.9rem;font-family:var(--mono)}
+.press-list a{font-weight:700;text-decoration:none}
+.press-list a:hover{text-decoration:underline}
+@media (max-width:560px){.press-list li{grid-template-columns:minmax(0,1fr);gap:4px}}
+.release-body p{color:var(--ink-2);max-width:70ch;margin-top:14px}
+.release-body h2{margin-top:36px}
+.release-dateline{font-weight:700;color:var(--ink)}
