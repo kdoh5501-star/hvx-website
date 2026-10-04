@@ -36,7 +36,7 @@ Allocation: Sales 30% · Foundation 25% (25% at TGE, then linear 24 months) · T
 | Card network partnership | In progress (never say "completed") |
 | HIVE Wallet app | In development |
 | Exchange listing | Planned — not confirmed |
-| Regional (Philippine) entity | Planned / in progress |
+| Philippine non-profit foundation (a foundation, not a company; card and other regulated services go through licensed partners) | Planned / in progress |
 
 ## 4. Hard rules
 1. **No Korean language anywhere** (UI, meta tags, comments shipped to users, alt text). Supported languages: English (default), Filipino/Tagalog (`tl`), Japanese (`ja`), Simplified Chinese (`zh`), Russian (`ru`).
