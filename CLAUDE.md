@@ -22,7 +22,7 @@ The approved design and content baseline is the original single-file prototype, 
 
 Brand name on the site is **HIVE-X**; the on-chain token name is **HiveX**. Use "HiveX (HVX)" in any exchange / listing / registry form.
 
-Allocation: Sales 30% · Foundation 25% (25% at TGE, then linear 24 months) · Team 20% (same) · Ecosystem 10% · Liquidity 10% · Marketing 5%.
+Allocation: Sales 30% · Foundation 25% (held by the HIVE-X non-profit foundation in the Philippines; 25% at TGE, then linear 24 months) · Team 20% (same) · Ecosystem 10% · Liquidity 10% · Marketing 5%.
 
 ## 3. Product status (keep these labels honest)
 | Feature | Status label on site |
